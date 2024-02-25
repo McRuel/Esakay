@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity">
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/names"
+        android:gravity="center"
+        >
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/home"
+            android:textAlignment="center"
+            />
+        <ImageButton
+            android:id="@+id/activity"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/activity"
+            android:layout_marginStart="40dp"
+            />
+
+        <ImageButton
+            android:id="@+id/message"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/message"
+            android:layout_marginStart="40dp"/>
+        <ImageButton
+            android:id="@+id/account"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/account"
+            android:layout_marginStart="40dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="17sp"
+            android:layout_marginStart="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity"
+            android:textSize="17sp"
+            android:layout_marginStart="40dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chats"
+            android:textSize="17sp"
+            android:layout_marginStart="30dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            android:textSize="17sp"
+            android:layout_marginStart="30dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

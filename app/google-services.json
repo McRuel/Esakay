@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "752341881509",
+    "project_id": "my-application-70233",
+    "storage_bucket": "my-application-70233.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752341881509:android:10774c0e85a6da2100f34c",
+        "android_client_info": {
+          "package_name": "com.example.esakay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgdMx68h3QMDAnMuEFr_nxFLTMEnPyHL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

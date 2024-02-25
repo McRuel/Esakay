@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Transport">
+
+    <LinearLayout
+        android:id="@+id/PickUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/img" />
+
+        <EditText
+            android:id="@+id/pickUpAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Pick up at..."
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dropOff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PickUp"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+
+            android:layout_width="45dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/img_1" />
+        <EditText
+            android:id="@+id/dropOffAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Drop off at..."
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/locDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dropOff"
+        android:layout_marginTop="30dp">
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/img_2" />
+    <EditText
+        android:id="@+id/locationDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Location details..."
+        android:layout_marginStart="10dp"/>
+</LinearLayout>
+<Button
+    android:id="@+id/setDateAndTime"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Set Date and time"
+    android:layout_below="@id/locDetails"
+    android:layout_marginTop="20dp"
+    android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:id="@+id/book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book"
+        android:layout_below="@id/setDateAndTime"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
