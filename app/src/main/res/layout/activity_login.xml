@@ -34,85 +34,29 @@
         android:background="@drawable/round_edittxt"
         android:hint="Mobile Number"
         android:textSize="20sp"
+        android:padding="15dp"
         android:textColor="@color/black"
          />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_below="@id/textFieldMobileNumber"
-        android:id="@+id/textFieldConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:passwordToggleEnabled="true"
-        >
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_edittxt"
-        android:hint="Password"
-        android:textSize="20sp"
-        android:padding="15dp"
-         />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/forgot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textFieldConfirmPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="15dp"
-
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:text="Forgot Password?"
-        android:textSize="17sp"
-        android:textColor="@color/blue"/>
-
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signup"
-        android:layout_marginTop="220dp"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/forgot"
-            android:text="Don't have an Account?"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/forgot"
-            android:padding="10dp"
-            android:text="Sign Up"
-            android:textColor="@color/blue"
-            android:textSize="17sp" />
-
-    </LinearLayout>
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/forgot"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/textFieldMobileNumber"
         android:background="@drawable/round_button"
-        android:text="Log In" />
+        android:text="Send Otp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

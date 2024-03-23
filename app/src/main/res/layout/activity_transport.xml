@@ -6,25 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".Transport">
 
+    <fragment
+        android:id="@+id/transportMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="48dp"
+        android:layout_height="38dp"
+        android:background="@drawable/back"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"/>
+
     <LinearLayout
         android:id="@+id/PickUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="400dp">
 
         <ImageView
             android:layout_width="45dp"
             android:layout_height="37dp"
-            android:layout_marginTop="3dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
             android:background="@drawable/img" />
 
         <EditText
             android:id="@+id/pickUpAt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Pick up at..."
-            android:layout_marginStart="10dp"/>
+            android:layout_marginStart="10dp"
+            android:hint="Pick up at..." />
     </LinearLayout>
 
     <LinearLayout
@@ -32,21 +50,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/PickUp"
-        android:layout_marginTop="30dp">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp">
 
         <ImageView
 
             android:layout_width="45dp"
             android:layout_height="37dp"
-            android:layout_marginTop="3dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
             android:background="@drawable/img_1" />
+
         <EditText
             android:id="@+id/dropOffAt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Drop off at..."
-            android:layout_marginStart="10dp"/>
+            android:layout_marginStart="10dp"
+            android:hint="Drop off at..." />
     </LinearLayout>
 
     <LinearLayout
@@ -54,37 +74,75 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dropOff"
-        android:layout_marginTop="30dp">
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/img_2" />
-    <EditText
-        android:id="@+id/locationDetails"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="0dp">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/img_2" />
+
+        <EditText
+            android:id="@+id/locationDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:hint="Location details..." />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/selectDateAndTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Location details..."
-        android:layout_marginStart="10dp"/>
-</LinearLayout>
-<Button
-    android:id="@+id/setDateAndTime"
-    android:layout_width="wrap_content"
+        android:layout_below="@id/locDetails"
+        android:layout_marginTop="10dp"
+     android:layout_centerHorizontal="true"
+        android:text="Set Date and Time:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+<LinearLayout
+    android:id="@+id/dateAndTimePicker"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Set Date and time"
-    android:layout_below="@id/locDetails"
-    android:layout_marginTop="20dp"
-    android:layout_centerHorizontal="true"/>
+    android:layout_below="@+id/selectDateAndTime"
+    android:layout_marginTop="10dp">
+    <Button
+        android:id="@+id/datePicker"
+        style="?android:spinnerStyle"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:onClick="openDatePicker"
+        android:text="JANUARY 01 2020"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/timePicker"
+        style="?android:spinnerStyle"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:onClick="openTimePicker"
+        android:text="12:00am"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+</LinearLayout>
 
 
     <Button
         android:id="@+id/book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Book"
-        android:layout_below="@id/setDateAndTime"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@id/dateAndTimePicker"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="156dp"
+        android:text="Book" />
 
 </RelativeLayout>

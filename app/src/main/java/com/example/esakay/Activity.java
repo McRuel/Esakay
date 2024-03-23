@@ -9,18 +9,20 @@ import android.widget.ImageButton;
 
 public class Activity extends AppCompatActivity {
 
-    ImageButton home,message,account,activity;
+    ImageButton home,message,account,activity,back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_);
 
+        back= findViewById(R.id.back);
         home = findViewById(R.id.home);
         message =  findViewById(R.id.message);
         account = findViewById(R.id. account);
         activity = findViewById(R.id.activity);
 
+        back.setOnClickListener(this::onClick);
         home.setOnClickListener(this::onClick);
         message.setOnClickListener(this::onClick);
         account.setOnClickListener(this::onClick);
@@ -35,6 +37,8 @@ public class Activity extends AppCompatActivity {
             startActivity(new Intent(Activity.this,Activity.class));
         }else if (v.getId()== R.id.account) {
             startActivity(new Intent(Activity.this,passengerAccount.class));
+        }else if (v.getId()== R.id.back) {
+            finish();
         }
     }
 }

@@ -15,7 +15,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="60dp"
-        android:background="@drawable/tricycle1" />
+        android:background="@drawable/flogo" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_below="@id/logo"
@@ -34,7 +34,8 @@
             android:background="@drawable/round_edittxt"
             android:hint="Full Name"
             android:textColor="@color/black"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            android:padding="15dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,6 +57,7 @@
         android:hint="Mobile Number"
         android:textSize="17sp"
         android:textColor="@color/black"
+        android:padding="15dp"
        />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,7 +78,7 @@
         android:background="@drawable/round_edittxt"
         android:hint="Email"
         android:textSize="17sp"
-
+        android:padding="15dp"
         android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,7 +101,7 @@
         android:background="@drawable/round_edittxt"
         android:hint="Password"
         android:textSize="17sp"
-
+        android:padding="15dp"
         android:textColor="@color/black"
        />
     </com.google.android.material.textfield.TextInputLayout>
@@ -121,6 +123,7 @@
         android:background="@drawable/round_edittxt"
         android:textSize="17sp"
         android:hint="Confirm Password"
+        android:padding="15dp"
         />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -180,9 +183,9 @@
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/create_btn"
         android:gravity="center"
-        android:layout_marginTop="50dp">
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:id="@+id/account"

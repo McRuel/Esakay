@@ -4,53 +4,230 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".passengerAccount">
+    tools:context=".passengerAccount"
+    android:background="@color/blue">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/back"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        />
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="241dp"
+        android:background="@drawable/account_design" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        />
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:background="@color/white"
+        android:layout_marginTop="400dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account info"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:layout_below="@+id/passengerEmailAccount"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"
+        />
+    <ImageView
+        android:id="@+id/Name"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="378dp"
+        android:background="@drawable/name" />
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="100dp"
+      android:layout_marginTop="378dp"
+      android:orientation="vertical">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Name"
+          android:textSize="20dp"
+          android:textColor="@color/black"/>
+      <TextView
+          android:id="@+id/fullName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:hint="user name"/>
+
+  </LinearLayout>
+    <ImageView
+        android:id="@+id/contactNumber"
+        android:layout_below="@+id/Name"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/phone_1" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="525dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/gmailAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="user gmail"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="450dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Number"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/mobile_Number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="user contact number" />
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/emailAccount"
+        android:layout_below="@+id/contactNumber"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/email" />
+    <ImageView
+        android:id="@+id/userRole"
+        android:layout_below="@+id/emailAccount"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/role"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="595dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Role"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="user role" />
+
+    </LinearLayout>
 
     <TextView
-        android:text="Account"
-        android:textSize="40dp"
-        android:layout_centerInParent="true"
+        android:id="@+id/passengerFullName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imageInsert"
+        android:hint="Full Name"
+        android:textSize="30dp" />
+    <TextView
+        android:id="@+id/passengerEmailAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passengerFullName"
+        android:layout_centerHorizontal="true"
+        android:hint="Email account"
+        android:textSize="20dp" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageInsert"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="127dp"
+        android:background="@color/teal_200"
+        android:src="@drawable/baseline_person_24"
+        app:shapeAppearanceOverlay="@style/circle"
+        android:scaleType="centerCrop"/>
     <LinearLayout
         android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_above="@id/names"
-        >
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="3dp"
+        android:gravity="center">
 
         <ImageButton
             android:id="@+id/home4"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/home"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <ImageButton
             android:id="@+id/activity4"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@drawable/activity"
             android:layout_marginStart="40dp"
-            />
+            android:background="@drawable/activity" />
 
         <ImageButton
             android:id="@+id/message4"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@drawable/message"
-            android:layout_marginStart="40dp"/>
+            android:layout_marginStart="40dp"
+            android:background="@drawable/message" />
+
         <ImageButton
             android:id="@+id/account4"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@drawable/account"
-            android:layout_marginStart="40dp"/>
+            android:layout_marginStart="40dp"
+            android:background="@drawable/account" />
 
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/names"
         android:layout_width="match_parent"
@@ -86,7 +263,20 @@
             android:textSize="17sp"
             android:layout_marginStart="20dp"/>
 
+
+
     </LinearLayout>
-
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="149dp"
+        android:layout_marginEnd="135dp"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:contentDescription="TODO"
+        android:focusable="true"
+        app:srcCompat="@drawable/baseline_photo_camera_24" />
 </RelativeLayout>

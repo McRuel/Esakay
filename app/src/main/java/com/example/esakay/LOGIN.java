@@ -9,9 +9,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,13 +36,12 @@ import java.util.concurrent.TimeUnit;
 
 public class LOGIN extends AppCompatActivity {
 
-    EditText mobile, password;
-    TextView forgot, register;
+    EditText phoneInput;
+    String defaultCountryCode = "+63";
 
-    Button signUp;
+    Button sendOtpBtn;
     FirebaseAuth mAuth;
-    String verificationId;
-    String selectedValue;
+    ProgressBar progressBar;
 
 
     @Override
@@ -48,84 +49,37 @@ public class LOGIN extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mobile = (EditText) findViewById(R.id.mobile);
-        password = (EditText) findViewById(R.id.password);
-        forgot = (TextView) findViewById(R.id.forgot);
-        register = (TextView) findViewById(R.id.register);
-        signUp = (Button) findViewById(R.id.signup);
+      phoneInput = (EditText) findViewById(R.id.mobile);
+        sendOtpBtn = (Button) findViewById(R.id.login);
+        progressBar = findViewById(R.id.progressBar);
         mAuth = FirebaseAuth.getInstance();
-        selectedValue = getIntent().getStringExtra("selectedValue");
 
 
-        //forgot Onclick listener for the forgot activity
-        forgot.setOnClickListener(new View.OnClickListener() {
+        progressBar.setVisibility(View.GONE);
+        sendOtpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), FORGOTPASSWORD.class);
-                startActivity(intent);
-            }
-        });
-        //register Onclick listener for the register activity
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), REGISTER.class);
-                startActivity(intent);
-            }
-        });
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String pass, phone;
+                String phone;
 
-                pass = password.getText().toString();
-                phone = mobile.getText().toString();
+                phone = phoneInput.getText().toString();
 
-                if (TextUtils.isEmpty(phone)) {
-                    mobile.setError("Enter Mobile Number");
-                    mobile.requestFocus();
+              if (TextUtils.isEmpty(phone)) {
+                    phoneInput.setError("Enter Mobile Number");
+                     phoneInput.requestFocus();
                     return;
-                } else if (TextUtils.isEmpty(pass)) {
-                    password.setError("Enter Mobile Number");
-                    password.requestFocus();
-                    return;
-                } else {
-                    FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    CollectionReference usersRef = db.collection("users");
-
-                    Query query = usersRef.whereEqualTo("mNum", phone).whereEqualTo("pass", pass);
-                    query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                    // Get user role
-                                    String userRole = document.getString("role");
-                                    // Navigate to appropriate activity based on user role
-                                    if ("Passenger".equals(userRole)) {
-                                        // Start PassengerActivity
-                                        Intent intent = new Intent(LOGIN.this, PassengerScreen.class);
-                                        startActivity(intent);
-                                        finish(); // Finish current activity to prevent user from going back to login screen
-                                    } else if ("Driver".equals(userRole)) {
-                                        // Start DriverActivity
-                                        Intent intent = new Intent(LOGIN.this, DriverScreen.class);
-                                        startActivity(intent);
-                                        finish(); // Finish current activity to prevent user from going back to login screen
-                                    } else {
-                                        // Handle other roles if needed
-                                    }
-                                }
-                            } else {
-                                Log.d(TAG, "Error getting documents: ", task.getException());
-                            }
-                        }
-                    });
-
-
-                }
+                } else if (phone.startsWith("0")) {
+                  phoneInput.setError("Phone number should start with +63");
+                  phoneInput.requestFocus();
+                  return;
+              } else {
+                  Intent intent = new Intent(getApplicationContext(),SmsVerification.class);
+                  intent.putExtra("mNum", phone);
+                  startActivity(intent);
+              }
             }
         });
+
+
 
     }
 }

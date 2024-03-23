@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:title="Services">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/myCurrentLocation"
+                        android:icon="@drawable/location"
+                        android:title="My Current Location"/>
+                    <item android:id="@+id/rideHistory"
+                        android:icon="@drawable/history"
+                        android:title="Ride History"/>
+                    <item android:id="@+id/rateRide"
+                        android:icon="@drawable/rate_ride"
+                        android:title="Rate Your Rides"/>
+                    <item android:id="@+id/savePlaces"
+                        android:icon="@drawable/favorite"
+                        android:title="Favorite Places"/>
+                    <item android:id="@+id/settings"
+                        android:icon="@drawable/settings"
+                        android:title="Settings"/>
+                    <item android:id="@+id/myMap"
+                        android:icon="@drawable/my_map"
+                        android:title="My Map"/>
+                </group>
+            </menu>
+        </item>
+    </group>
+    <group>
+        <item android:title="Communications">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/share"
+                        android:icon="@drawable/share"
+                        android:title="Share with Friends"/>
+                    <item android:id="@+id/rateUs"
+                        android:icon="@drawable/rate"
+                        android:title="Rate Us"/>
+                </group>
+            </menu>
+        </item>
+    </group>
+
+    <group>
+        <item android:title="">
+            <menu>
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/logoutButton"
+            android:icon="@drawable/logout"
+            android:title="Log Out"/>
+    </group>
+
+
+</menu>
+

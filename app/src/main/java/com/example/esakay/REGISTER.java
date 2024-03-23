@@ -118,12 +118,11 @@ public class REGISTER extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(mNumber)) {
                     mobileNumber.setError("Enter Mobile Number");
                     mobileNumber.requestFocus();
-
                 }else if(!isValidMobile(mNumber)){
-                    mobileNumber.setError("Enter a valid mobile number");
+                    mobileNumber.setError("Please enter a number starting with +63");
                     mobileNumber.requestFocus();
                     return;
-                } else if (TextUtils.isEmpty(mail)) {
+                }else if (TextUtils.isEmpty(mail)) {
                     email.setError("Enter Your Email Address");
                     email.requestFocus();
                 }else if(!isValidEmail(mail)){
@@ -186,7 +185,7 @@ public class REGISTER extends AppCompatActivity {
                 }
             }
             private boolean isValidMobile(String mNumber) {
-               String regex ="\\d{11}$";
+               String regex ="\\+63\\d{10}$";
                return mNumber.matches(regex);
             }
             private boolean isValidEmail(String mail) {

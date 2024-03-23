@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Activity">
 
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="48dp"
+        android:layout_height="38dp"
+        android:background="@drawable/back"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"/>
+
     <LinearLayout
         android:id="@+id/buttons"
         android:layout_width="match_parent"

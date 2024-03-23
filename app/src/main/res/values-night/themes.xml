@@ -13,4 +13,8 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Customize your TimePicker color here -->
+        <item name="colorAccent">@color/blue</item>
+    </style>
 </resources>

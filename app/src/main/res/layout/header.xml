@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+  >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="99dp"
+        android:layout_height="95dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/flogo" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/logo"
+        android:hint="Your name"
+        android:textSize="20dp" />
+
+    <TextView
+            android:id="@+id/gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginStart="10dp"
+            android:layout_centerHorizontal="true"
+            android:hint="user Gmail"/>
+
+</RelativeLayout>
